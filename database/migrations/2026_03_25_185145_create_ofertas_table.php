@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ofertas', function (Blueprint $table) {
+        Schema::create('ofertas_nuevo', function (Blueprint $table) {
             $table->id();
+            $table->string('titulo');
+            $table->date('vigencia');
+            $table->string('tienda');
+            $table->decimal('precio_original', 8, 2);
+            $table->decimal('precio_descuento', 8, 2);
             $table->timestamps();
         });
     }
